@@ -2,20 +2,27 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OculusHandWire
   m_Shader: {fileID: 4800000, guid: b895d3431e75dc345a72e171f82bfbea, type: 3}
-  m_ShaderKeywords: _COLORGRADIENT_ON _FRESNEL_ON _KEYWORD0_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _COLORGRADIENT_ON
+  - _FRESNEL_ON
+  - _KEYWORD0_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -75,6 +82,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _Alpha: 1
     - _BumpScale: 1
@@ -86,7 +94,8 @@ Material:
     - _Fresnel: 1
     - _FresnelOpacity: 0
     - _FresnelOpacityPower: 3.66
-    - _FresnelPower: 0.16
+    - _FresnelPower: 5
+    - _GenerateGlow: 0
     - _GlobalOpacity: 0.714
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -95,8 +104,9 @@ Material:
     - _Metallic: 0
     - _MiddleGlowValue: 0
     - _Mode: 0
+    - _OcclusionEnabled: 0
     - _OcclusionStrength: 1
-    - _Opacity: 0.25
+    - _Opacity: 0
     - _OutlineFresnelOpacity: 0
     - _OutlineFresnelPower: 2.462451
     - _OutlineGlowIntensity: 1
@@ -105,7 +115,7 @@ Material:
     - _OutlineOpacity: 1
     - _OutlinePinchRange: 0.15
     - _OutlineSphereHardness: 0.15
-    - _OutlineWidth: 0.00134
+    - _OutlineWidth: 0.000005
     - _Parallax: 0.02
     - _PinchIntensity: 0
     - _PinchRange: 0.03
@@ -118,7 +128,7 @@ Material:
     - _ThumbGlowValue: 0
     - _UVSec: 0
     - _UseTexture: 0
-    - _WristFade: 0
+    - _WristFade: 1
     - _WristRange: 0.06
     - _ZWrite: 1
     - __dirty: 0
@@ -127,10 +137,11 @@ Material:
     - _ColorBottom: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     - _ColorPrimary: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
     - _ColorSecondary: {r: 1, g: 0.8443396, b: 0.8443396, a: 1}
-    - _ColorTop: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorTop: {r: 1, g: 0, b: 0.6039734, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FingerGlowColor: {r: 0.39716092, g: 0.990566, b: 0.990566, a: 1}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 1, b: 0.79538155, a: 1}
     - _OutlineColorBottom: {r: 0, g: 0.19427729, b: 1, a: 1}
     - _OutlineColorTop: {r: 1, g: 0, b: 0, a: 1}
     - _OutlineGlowColor: {r: 1, g: 1, b: 1, a: 1}

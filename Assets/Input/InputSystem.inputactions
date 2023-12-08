@@ -1,0 +1,122 @@
+{
+    "name": "InputSystem",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "61dba5a1-301d-4d37-9800-1c9a4c2133fd",
+            "actions": [
+                {
+                    "name": "Trigger R",
+                    "type": "Button",
+                    "id": "fc571b1e-0146-49fe-bc86-f81313f1e9b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Trigger L",
+                    "type": "Button",
+                    "id": "d3f78d21-0c1d-4fd3-a3fa-8acd691f96d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Walking",
+                    "type": "PassThrough",
+                    "id": "c3680041-1e89-496d-aa71-95e3c1438246",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rotate",
+                    "type": "PassThrough",
+                    "id": "b43d8354-26f3-48c3-8bf5-656cae42617a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d10ebb58-2b85-4599-86ce-e8a274f01456",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c31e1f09-0286-4b08-bfda-1488e93915cc",
+                    "path": "<XRController>{LeftHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walking",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "136905b6-876d-4acc-90c3-c20acc4172f5",
+                    "path": "<XRController>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5913996-6189-4545-b843-5ab068ac878c",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trigger L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TimeStop",
+            "id": "57e3a0a6-97f0-46a9-abfb-61710bebf7ad",
+            "actions": [
+                {
+                    "name": "TimeButton",
+                    "type": "Button",
+                    "id": "b62b6430-94b1-475d-acb3-d76133280feb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "42ce9b3c-e1bb-4291-b301-e40533cf2a9f",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TimeButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

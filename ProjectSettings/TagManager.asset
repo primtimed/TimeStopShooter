@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SamplesInfoPanel
+  - Gun
+  - Enemie
+  - Map
+  - Damage
+  - Hand
   layers:
   - Default
   - TransparentFX
@@ -34,9 +40,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Enemie
+  - Player
+  - Gun
   m_SortingLayers:
   - name: Default
     uniqueID: 0
