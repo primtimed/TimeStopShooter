@@ -7,9 +7,17 @@ public class HandCol : MonoBehaviour
     public bool _rechts;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Gun" && other.GetComponent<Gun>()._holdingGun == false)
+        if(other.tag == "Gun" && other.GetComponent<Gun>() != null)
         {
-            other.GetComponent<Gun>()._rechts = _rechts;
+            if(other.GetComponent<Gun>()._holdingGun == false)
+            {
+                other.GetComponent<Gun>()._rechts = _rechts;   
+
+                if (other.GetComponentInChildren<GripCheck>() != null)
+                {
+                    other.GetComponentInChildren<GripCheck>()._rechts = _rechts;
+                }
+            }
         }
     }
 }

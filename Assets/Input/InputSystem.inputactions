@@ -24,6 +24,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Hold R",
+                    "type": "Button",
+                    "id": "8a00adfd-e8e2-4081-b4d6-3873ab607d95",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hold L",
+                    "type": "Button",
+                    "id": "865487a2-a9a2-4c99-a062-7bba692a28bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Walking",
                     "type": "PassThrough",
                     "id": "c3680041-1e89-496d-aa71-95e3c1438246",
@@ -84,6 +102,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Trigger L",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "586d7630-85e7-4202-8610-7ecbd81794ea",
+                    "path": "<XRController>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ebe6fbd-df3e-4dc2-9f34-8b03d78cacde",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold L",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

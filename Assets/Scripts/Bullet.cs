@@ -39,6 +39,11 @@ public class Bullet : MonoBehaviour
 
         StartCoroutine(DestroyTime());
 
+        if (collision.gameObject.tag != "Blade")
+        {
+            return;
+        }
+
         if (collision.gameObject.tag == "Enemie")
         {
             collision.rigidbody.AddExplosionForce(_explotionForge, collision.transform.position, _explotionRadius, 5);

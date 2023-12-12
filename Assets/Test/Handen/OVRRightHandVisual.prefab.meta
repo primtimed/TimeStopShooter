@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 21c58119a94d77a46b4d6dde94b89757
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 82022
+  packageName: Oculus Integration
+  packageVersion: 57.0
+  assetPath: Assets/Oculus/Interaction/OVRIntegration/Runtime/Prefabs/Hands/OVRRightHandVisual.prefab
+  uploadId: 618200

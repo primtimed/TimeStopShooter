@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 68c94a5b46877ab4bbda139c7ecbbb66
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 82022
+  packageName: Oculus Integration
+  packageVersion: 57.0
+  assetPath: Assets/Oculus/Interaction/OVRIntegration/Runtime/Prefabs/Hands/OVRLeftHandSynthetic.prefab
+  uploadId: 618200

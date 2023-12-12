@@ -38,7 +38,6 @@ public class TimeStop : MonoBehaviour
         else
         {
             _canPress = false;
-            _ray.SetActive(false);
             _rune.startColor = Color.red * 1;
             _material.SetColor("_EmissionColor", Color.red * 1);
             _material.mainTextureScale = new Vector2(Random.Range(1.01f, 1.2f), Random.Range(1.01f, 1.2f));

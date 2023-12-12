@@ -145,7 +145,6 @@ namespace Oculus.Interaction
 
             int useGrabPoints = _selectingPoints.Count;
 
-            //_holding = false;
             _holding = true;
             GetComponent<Collider>().isTrigger = true;
 

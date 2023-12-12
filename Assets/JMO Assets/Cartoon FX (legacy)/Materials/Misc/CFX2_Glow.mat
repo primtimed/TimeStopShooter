@@ -42,7 +42,7 @@ Material:
     - _TexCoordScrollY: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 1, g: 0, b: 0.5568862, a: 0.5}
+    - _TintColor: {r: 0, g: 0.509434, b: 0.41972363, a: 0.5}
   m_BuildTextureStacks: []
 --- !u!1002 &2100001
 EditorExtensionImpl:

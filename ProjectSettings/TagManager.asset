@@ -10,6 +10,8 @@ TagManager:
   - Map
   - Damage
   - Hand
+  - Grip
+  - Blade
   layers:
   - Default
   - TransparentFX
@@ -38,8 +40,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Grip
+  - Hand
   - Enemie
   - Player
   - Gun

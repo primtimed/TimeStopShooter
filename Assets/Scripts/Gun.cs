@@ -1,5 +1,6 @@
 using Oculus.Interaction;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,7 @@ public class Gun : MonoBehaviour
 {
     public bool _auto;
 
-    public GameObject _obj;
+    public GameObject _obj, _flash, _sound;
     public Transform _loc;
 
     public float _shootSpeed;
@@ -68,17 +69,19 @@ public class Gun : MonoBehaviour
 
         if(_holdingGun)
         {
-            //_gunCol.enabled = false;
+            _gunCol.enabled = false;
         }
 
         else
         {
-            //_gunCol.enabled = true;
+            _gunCol.enabled = true;
         }
 
         if (_shooting && _shootSpeed <= _time & _holdingGun && _auto)
         {
             Instantiate(_obj, _loc.position, _loc.rotation, null);
+            StartCoroutine(Flash());
+
             _time = 0;
         }
 
@@ -101,11 +104,14 @@ public class Gun : MonoBehaviour
             if (_shotgun)
             {
                 StartCoroutine(Shotgun());
+                StartCoroutine(Flash());
 
                 return;
             }
 
             Instantiate(_obj, _loc.position, _loc.rotation, null);
+            StartCoroutine(Flash());
+
         }
 
         if (context.canceled)
@@ -130,11 +136,14 @@ public class Gun : MonoBehaviour
             if (_shotgun)
             {
                 StartCoroutine(Shotgun());
+                StartCoroutine(Flash());
+                StartCoroutine(Flash());
 
                 return;
             }
 
             Instantiate(_obj, _loc.position, _loc.rotation, null);
+            StartCoroutine(Flash());
         }
 
         if (context.canceled)
@@ -163,5 +172,13 @@ public class Gun : MonoBehaviour
         }
 
         _nowBullets = 0;
+    }
+
+    IEnumerator Flash()
+    {
+        _flash.SetActive(true);
+        Instantiate(_sound, _loc.position, _loc.rotation, null);
+        yield return new WaitForSeconds(0.1f);
+        _flash.SetActive(false);
     }
 }

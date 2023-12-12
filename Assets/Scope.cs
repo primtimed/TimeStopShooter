@@ -6,7 +6,12 @@ public class Scope : MonoBehaviour
 {
     public Gun _gun;
 
-    public Camera _cam;
+    Camera _cam;
+
+    private void Start()
+    {
+        _cam = GetComponentInChildren<Camera>();
+    }
 
     private void Update()
     {

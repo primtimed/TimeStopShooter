@@ -7,7 +7,7 @@ public class EnemieSharts : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Damage" || other.transform.tag == "Gun" || other.transform.tag == "Hand")
+        if (other.transform.tag == "Damage" || other.transform.tag == "Blade")
         {
             GetComponentInParent<EnemieDead>().Fall();
         }

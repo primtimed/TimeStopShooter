@@ -46,6 +46,24 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Hold R"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a00adfd-e8e2-4081-b4d6-3873ab607d95"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hold L"",
+                    ""type"": ""Button"",
+                    ""id"": ""865487a2-a9a2-4c99-a062-7bba692a28bd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Walking"",
                     ""type"": ""PassThrough"",
                     ""id"": ""c3680041-1e89-496d-aa71-95e3c1438246"",
@@ -108,6 +126,28 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Trigger L"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""586d7630-85e7-4202-8610-7ecbd81794ea"",
+                    ""path"": ""<XRController>{RightHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold R"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ebe6fbd-df3e-4dc2-9f34-8b03d78cacde"",
+                    ""path"": ""<XRController>{LeftHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold L"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -146,6 +186,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_TriggerR = m_Movement.FindAction("Trigger R", throwIfNotFound: true);
         m_Movement_TriggerL = m_Movement.FindAction("Trigger L", throwIfNotFound: true);
+        m_Movement_HoldR = m_Movement.FindAction("Hold R", throwIfNotFound: true);
+        m_Movement_HoldL = m_Movement.FindAction("Hold L", throwIfNotFound: true);
         m_Movement_Walking = m_Movement.FindAction("Walking", throwIfNotFound: true);
         m_Movement_Rotate = m_Movement.FindAction("Rotate", throwIfNotFound: true);
         // TimeStop
@@ -214,6 +256,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_TriggerR;
     private readonly InputAction m_Movement_TriggerL;
+    private readonly InputAction m_Movement_HoldR;
+    private readonly InputAction m_Movement_HoldL;
     private readonly InputAction m_Movement_Walking;
     private readonly InputAction m_Movement_Rotate;
     public struct MovementActions
@@ -222,6 +266,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public MovementActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @TriggerR => m_Wrapper.m_Movement_TriggerR;
         public InputAction @TriggerL => m_Wrapper.m_Movement_TriggerL;
+        public InputAction @HoldR => m_Wrapper.m_Movement_HoldR;
+        public InputAction @HoldL => m_Wrapper.m_Movement_HoldL;
         public InputAction @Walking => m_Wrapper.m_Movement_Walking;
         public InputAction @Rotate => m_Wrapper.m_Movement_Rotate;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
@@ -239,6 +285,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @TriggerL.started += instance.OnTriggerL;
             @TriggerL.performed += instance.OnTriggerL;
             @TriggerL.canceled += instance.OnTriggerL;
+            @HoldR.started += instance.OnHoldR;
+            @HoldR.performed += instance.OnHoldR;
+            @HoldR.canceled += instance.OnHoldR;
+            @HoldL.started += instance.OnHoldL;
+            @HoldL.performed += instance.OnHoldL;
+            @HoldL.canceled += instance.OnHoldL;
             @Walking.started += instance.OnWalking;
             @Walking.performed += instance.OnWalking;
             @Walking.canceled += instance.OnWalking;
@@ -255,6 +307,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @TriggerL.started -= instance.OnTriggerL;
             @TriggerL.performed -= instance.OnTriggerL;
             @TriggerL.canceled -= instance.OnTriggerL;
+            @HoldR.started -= instance.OnHoldR;
+            @HoldR.performed -= instance.OnHoldR;
+            @HoldR.canceled -= instance.OnHoldR;
+            @HoldL.started -= instance.OnHoldL;
+            @HoldL.performed -= instance.OnHoldL;
+            @HoldL.canceled -= instance.OnHoldL;
             @Walking.started -= instance.OnWalking;
             @Walking.performed -= instance.OnWalking;
             @Walking.canceled -= instance.OnWalking;
@@ -328,6 +386,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     {
         void OnTriggerR(InputAction.CallbackContext context);
         void OnTriggerL(InputAction.CallbackContext context);
+        void OnHoldR(InputAction.CallbackContext context);
+        void OnHoldL(InputAction.CallbackContext context);
         void OnWalking(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
     }
