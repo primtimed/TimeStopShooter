@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.tag == "Enemie")
+        if (collision.gameObject.tag == "Enemie" || collision.gameObject.tag == "Head")
         {
             collision.rigidbody.AddExplosionForce(_explotionForge, collision.transform.position, _explotionRadius, 5);
         }

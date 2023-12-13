@@ -71,7 +71,9 @@ MonoBehaviour:
   _canPress: 1
   _timeStopActiveTime: 2
   _coolDown: 10
-  _material: {fileID: 2100000, guid: 516f854087370f34b9ba559279a95732, type: 2}
+  _material: {fileID: 0}
+  _rune: {fileID: 0}
+  _ray: {fileID: 0}
 --- !u!1 &5105854864525869147
 GameObject:
   m_ObjectHideFlags: 0

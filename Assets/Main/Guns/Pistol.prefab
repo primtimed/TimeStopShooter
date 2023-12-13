@@ -88,7 +88,7 @@ MonoBehaviour:
   _oneGrabTransformer: {fileID: 0}
   _twoGrabTransformer: {fileID: 0}
   _targetTransform: {fileID: 0}
-  _maxGrabPoints: -1
+  _maxGrabPoints: 1
 --- !u!114 &7532703864866085685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.06100885, y: 0.2115952, z: 0.3194075}
+  m_Size: {x: 0.05, y: 0.2115952, z: 0.3194075}
   m_Center: {x: 0, y: 0.1, z: 0.1}
 --- !u!1 &154853762408387055
 GameObject:
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactorFilters:
   - {fileID: 3107053283305530251}
-  _maxInteractors: -1
+  _maxInteractors: 1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _handUseDelegate: {fileID: 0}
@@ -450,8 +450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactorFilters: []
-  _maxInteractors: -1
-  _maxSelectingInteractors: -1
+  _maxInteractors: 1
+  _maxSelectingInteractors: 1
   _data: {fileID: 0}
   _pointableElement: {fileID: 7424364864999389219}
   _rigidbody: {fileID: 7896812098490098761}
@@ -1260,6 +1260,11 @@ PrefabInstance:
       objectReference: {fileID: 7896812098490098761}
     - target: {fileID: 8661476539058074266, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
+      propertyPath: _maxInteractors
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661476539058074266, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
+        type: 3}
       propertyPath: _physicsGrabbable
       value: 
       objectReference: {fileID: 7532703864866085685}
@@ -1268,6 +1273,11 @@ PrefabInstance:
       propertyPath: _pointableElement
       value: 
       objectReference: {fileID: 7424364864999389219}
+    - target: {fileID: 8661476539058074266, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
+        type: 3}
+      propertyPath: _maxSelectingInteractors
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1393,6 +1403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834709484077481304, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
+        type: 3}
+      propertyPath: _maxInteractors
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -178,7 +178,7 @@ public class Gun : MonoBehaviour
     {
         _flash.SetActive(true);
         Instantiate(_sound, _loc.position, _loc.rotation, null);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         _flash.SetActive(false);
     }
 }

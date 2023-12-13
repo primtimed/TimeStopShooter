@@ -104,3 +104,5 @@ MonoBehaviour:
   _timeStopActiveTime: 5
   _coolDown: 0
   _material: {fileID: 0}
+  _rune: {fileID: 0}
+  _ray: {fileID: 0}
