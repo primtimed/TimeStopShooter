@@ -12,6 +12,7 @@ TagManager:
   - Hand
   - Grip
   - Blade
+  - Head
   layers:
   - Default
   - TransparentFX

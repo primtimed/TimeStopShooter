@@ -141,6 +141,7 @@ namespace Oculus.Interaction
         {
             // End the transform on any existing transformer before we
             // begin the new one
+            _holding = false;
             EndTransform();
 
             int useGrabPoints = _selectingPoints.Count;

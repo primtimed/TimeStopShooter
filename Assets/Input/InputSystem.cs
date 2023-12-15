@@ -80,6 +80,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""6c329d15-9771-427a-85b9-f0c90f68baa8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,6 +157,17 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Hold L"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7217b04d-596b-4950-9a4a-8a1d1843e0b9"",
+                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -190,6 +210,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Movement_HoldL = m_Movement.FindAction("Hold L", throwIfNotFound: true);
         m_Movement_Walking = m_Movement.FindAction("Walking", throwIfNotFound: true);
         m_Movement_Rotate = m_Movement.FindAction("Rotate", throwIfNotFound: true);
+        m_Movement_Reload = m_Movement.FindAction("Reload", throwIfNotFound: true);
         // TimeStop
         m_TimeStop = asset.FindActionMap("TimeStop", throwIfNotFound: true);
         m_TimeStop_TimeButton = m_TimeStop.FindAction("TimeButton", throwIfNotFound: true);
@@ -260,6 +281,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_HoldL;
     private readonly InputAction m_Movement_Walking;
     private readonly InputAction m_Movement_Rotate;
+    private readonly InputAction m_Movement_Reload;
     public struct MovementActions
     {
         private @InputSystem m_Wrapper;
@@ -270,6 +292,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @HoldL => m_Wrapper.m_Movement_HoldL;
         public InputAction @Walking => m_Wrapper.m_Movement_Walking;
         public InputAction @Rotate => m_Wrapper.m_Movement_Rotate;
+        public InputAction @Reload => m_Wrapper.m_Movement_Reload;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -297,6 +320,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Rotate.started += instance.OnRotate;
             @Rotate.performed += instance.OnRotate;
             @Rotate.canceled += instance.OnRotate;
+            @Reload.started += instance.OnReload;
+            @Reload.performed += instance.OnReload;
+            @Reload.canceled += instance.OnReload;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -319,6 +345,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Rotate.started -= instance.OnRotate;
             @Rotate.performed -= instance.OnRotate;
             @Rotate.canceled -= instance.OnRotate;
+            @Reload.started -= instance.OnReload;
+            @Reload.performed -= instance.OnReload;
+            @Reload.canceled -= instance.OnReload;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -390,6 +419,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnHoldL(InputAction.CallbackContext context);
         void OnWalking(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
     public interface ITimeStopActions
     {

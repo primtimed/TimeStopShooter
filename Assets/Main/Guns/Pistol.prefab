@@ -117,9 +117,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _auto: 0
+  _ammo: 16
   _obj: {fileID: 2993648131279112087, guid: 2230da35c9c9d5442931d13a2c0e70a3, type: 3}
   _flash: {fileID: 7325489720622587111}
   _sound: {fileID: 2502099737561605465, guid: 48d884b4287ef7e4ca84413f308e4676, type: 3}
+  _cantShoot: {fileID: 2255858665278042751, guid: b93140da3b63bb6448c8b42e05f66fcd,
+    type: 3}
   _loc: {fileID: 7179776595806909771}
   _shootSpeed: 0.007
   _shotgun: 0
@@ -128,6 +131,9 @@ MonoBehaviour:
   _holdingGun: 0
   _rechts: 0
   _gunCol: {fileID: 5042072139225452448}
+  _renderer: {fileID: 4235297010615681277}
+  _material: {fileID: 2100000, guid: a00ec461086875041b7d44d5621acbc1, type: 2}
+  _glitchMaterial: {fileID: 2100000, guid: 7ac31c0b9accd9f47898681587a5c457, type: 2}
 --- !u!65 &5484793722660171203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1532,6 +1538,12 @@ BoxCollider:
 --- !u!4 &3066354232507136914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 177219887544362974, guid: 6e2231308f8081e49952328fe89b2674,
+    type: 3}
+  m_PrefabInstance: {fileID: 2952246315488975948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4235297010615681277 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1314682002374958257, guid: 6e2231308f8081e49952328fe89b2674,
     type: 3}
   m_PrefabInstance: {fileID: 2952246315488975948}
   m_PrefabAsset: {fileID: 0}

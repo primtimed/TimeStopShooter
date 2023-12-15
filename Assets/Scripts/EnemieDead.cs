@@ -6,6 +6,8 @@ public class EnemieDead : MonoBehaviour
 {
     Rigidbody[] _rb;
 
+    public GameObject _deadSound;
+
     private void Start()
     {
         _rb = GetComponentsInChildren<Rigidbody>();
