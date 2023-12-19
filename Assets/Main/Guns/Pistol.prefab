@@ -50,9 +50,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105432749208285569}
   serializedVersion: 4
-  m_Mass: 0.0001
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.001
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -239,7 +239,7 @@ MonoBehaviour:
     _fingersFreedom: 0100000001000000010000000100000001000000
     _jointRotations:
     - {x: 0.39167747, y: -0.42615366, z: -0.011949986, w: 0.81537664}
-    - {x: 0.2655782, y: -0.085807726, z: -0.11948052, w: 0.9528009}
+    - {x: 0.05607236, y: -0.123545915, z: -0.1521526, w: 0.9790004}
     - {x: -0.08661378, y: 0.04015286, z: -0.3327904, w: 0.93815583}
     - {x: 0.07267232, y: -0.026730694, z: -0.37443477, w: 0.9240145}
     - {x: 0.03900166, y: -0.013826696, z: -0.15960504, w: 0.9863133}

@@ -19,6 +19,8 @@ public class Bullet : MonoBehaviour
         if (_hit)
         {
             _rb.velocity = new Vector3(0, 0, 0);
+            GetComponent<Collider>().enabled = false;
+            GetComponentInChildren<MeshRenderer>().enabled = false;
         }
     }
 
@@ -29,56 +31,48 @@ public class Bullet : MonoBehaviour
         _rb.AddForce(transform.forward * _bulletSpeed, ForceMode.Impulse);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Damage" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Gun") {return;}
-
-        _hit = true;
-        GetComponent<Collider>().enabled = false;
-        GetComponentInChildren<MeshRenderer>().enabled = false;
-
-        StartCoroutine(DestroyTime());
-
-        if (collision.gameObject.tag != "Blade")
-        {
-            return;
-        }
-
-        if (collision.gameObject.tag == "Enemie" || collision.gameObject.tag == "Head")
-        {
-            collision.rigidbody.AddExplosionForce(_explotionForge, collision.transform.position, _explotionRadius, 5);
-        }
-
-        else if (collision.gameObject.tag != "Map" && collision.gameObject.tag != "Player")
-        {
-            Destroy(collision.gameObject);
-        }
-    }
-
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Gun") { return; }
-
         _hit = true;
-        GetComponent<Collider>().enabled = false;
-        GetComponentInChildren<MeshRenderer>().enabled = false;
 
-        StartCoroutine(DestroyTime());
+        StartCoroutine(Destroy());
 
-        if (collision.gameObject.tag == "Enemie")
+        if (collision.gameObject.tag == "Map") { return; }
+
+        Debug.Log("hitenemie");
+
+        if (collision.gameObject.layer == 29)
         {
-            collision.GetComponent<Rigidbody>().AddExplosionForce(_explotionForge, collision.transform.position, _explotionRadius, 5);
+            if (collision.gameObject.tag == "Head")
+            {
+                collision.transform.GetComponentInParent<EnemieDead>().HeadShot();
+            }
+
+            else if (collision.gameObject.tag == "Enemie")
+            {
+                collision.transform.GetComponentInParent<EnemieDead>().Dead();
+            }
         }
 
-        else if (collision.gameObject.tag != "Map" && collision.gameObject.tag != "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            Debug.Log("player");
+            collision.GetComponentInParent<Player>().Hit(1000);
         }
+
+        StartCoroutine(Forge());
     }
 
-    IEnumerator DestroyTime()
+    IEnumerator Forge()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.1f);
+        GetComponent<Rigidbody>().AddExplosionForce(_explotionForge, transform.position, _explotionRadius, 5);
+    }
+
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
+
 }                                                                 

@@ -791,7 +791,7 @@ MonoBehaviour:
   _gunCol: {fileID: 3383610919698056821}
   _renderer: {fileID: 7204153591729908997}
   _material: {fileID: 2100000, guid: d287cd7e8c045694b87b6e30e5fd9faf, type: 2}
-  _glitchMaterial: {fileID: 2100000, guid: c6971af90f9cadc4ebf82b541ecb3a9d, type: 2}
+  _glitchMaterial: {fileID: 2100000, guid: d7bcd7725018ca74ea5f4efb8d58d5e0, type: 2}
 --- !u!65 &1259828964259614000
 BoxCollider:
   m_ObjectHideFlags: 0

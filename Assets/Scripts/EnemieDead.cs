@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class EnemieDead : MonoBehaviour
 {
-    Rigidbody[] _rb;
+    public GameObject _deadEnemie, _newWeapon;
 
-    public GameObject _deadSound;
+    public GameObject _headshotSound;
+    public Transform _weaponLoc;
 
-    private void Start()
+    public void HeadShot()
     {
-        _rb = GetComponentsInChildren<Rigidbody>();
+        Instantiate(_headshotSound, transform.position, transform.rotation);
+
+        Dead();
     }
 
-    public void Fall()
+    public void Dead()
     {
-        foreach (var rb in _rb)
-        {
-            rb.useGravity = true;
-        }
-
-        StartCoroutine(DestroyTime());
-    }
-
-    IEnumerator DestroyTime()
-    {
-        yield return new WaitForSeconds(5);
+        //falling enemie
+        Instantiate(_newWeapon, _weaponLoc.position, _weaponLoc.rotation);
+        Instantiate(_deadEnemie, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

@@ -24,6 +24,7 @@ public class Gun : MonoBehaviour
 
     bool _shooting = false;
     bool haveAmmo = true;
+    bool _reloading = false;
 
     public bool _shotgun;
     public float _spray, _sprayBullets;
@@ -128,6 +129,11 @@ public class Gun : MonoBehaviour
             StartCoroutine(RealoadAuto());
         }
 
+        else if(haveAmmo && !_shooting)
+        {
+            //StartCoroutine(RealoadOverTime());
+        }
+
         Ammo();
         StartCoroutine(OutimeUpdate());
     }
@@ -187,7 +193,7 @@ public class Gun : MonoBehaviour
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
     }
 
-    private void ShootL(InputAction.CallbackContext context)
+    public void ShootL(InputAction.CallbackContext context)
     {
         if(context.started && !haveAmmo)
         {
@@ -274,9 +280,14 @@ public class Gun : MonoBehaviour
 
     IEnumerator RealoadAuto()
     {
-        yield return new WaitForSeconds(5f);
+        if(!_reloading)
+        {
+            _reloading = true;
+            yield return new WaitForSeconds(5f);
 
-        _ammoNow = _ammo;
+            _ammoNow = _ammo;
+            _reloading = false;
+        }
     }
 
     void Reaload(InputAction.CallbackContext context)
@@ -307,4 +318,13 @@ public class Gun : MonoBehaviour
             haveAmmo = true;
         }
     }
+
+    IEnumerator RealoadOverTime()
+    {
+        float _time = (_ammo / 5);
+        yield return new WaitForSeconds(_time);
+
+        _ammoNow += 1;
+    }
+
 }
