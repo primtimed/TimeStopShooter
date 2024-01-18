@@ -13,7 +13,7 @@ public class EnemieSharts : MonoBehaviour
     {
         float _int = Random.Range(0, 1);
 
-        if (_int >= .2f)
+        if (_int >= .5f)
         {
             Instantiate(_deadSound, transform);
         }

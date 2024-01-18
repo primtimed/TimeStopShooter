@@ -37,3 +37,29 @@
 [1218/111138.325:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [1218/194823.837:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [1219/114115.610:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[1221/123732.461:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[1221/131851.147:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0110/123459.677:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+[0110/123657.923:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0111/135426.987:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0112/111555.987:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0112/124341.725:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124341.727:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124346.740:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124346.744:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124356.744:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124356.766:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124416.752:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124416.785:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124516.566:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124516.574:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124516.586:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/124516.595:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/150141.126:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0112/150141.156:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0115/102821.398:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0115/190508.391:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0115/190508.399:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0115/190508.442:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0115/190508.444:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0117/102941.633:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

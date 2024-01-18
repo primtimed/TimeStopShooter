@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9007022388071884384}
   - component: {fileID: 8176194222493948056}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: HandGrabInteractable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7483073422767485872}
   - component: {fileID: 2481769200247040876}
   - component: {fileID: 7640242633881238004}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: Saber
   m_TagString: Blade
   m_Icon: {fileID: 0}
@@ -128,9 +128,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851709421579602364}
   serializedVersion: 4
-  m_Mass: 0.001
-  m_Drag: 1
-  m_AngularDrag: 1
+  m_Mass: 1
+  m_Drag: 0.1
+  m_AngularDrag: 0.1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7927730944017036567}
   - component: {fileID: 2737065437754266345}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: Blade Col
   m_TagString: Blade
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9133315762738458755}
   - component: {fileID: 7260677006136912623}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: HandGrab Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3491160858944254910}
   - component: {fileID: 1266792153366259313}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: HandGrabPose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663859854152578718}
   - component: {fileID: 1184712360634708862}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: HandGrabPose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8293639119476539895}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6480699061671058965}
   - component: {fileID: 1232478247493916228}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: HandGrabPose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 1320973362789587587}
   - component: {fileID: 6287355979588598606}
   - component: {fileID: 2446392805135139956}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: UseInteractable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 285143395009109373}
   - component: {fileID: 5068438172758165207}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: Blade Col
   m_TagString: Blade
   m_Icon: {fileID: 0}
@@ -722,7 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2747708890326749289}
   - component: {fileID: 2564814615611022052}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: HandGrab Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238541292004833617}
   - component: {fileID: 5517767674225516631}
-  m_Layer: 31
+  m_Layer: 25
   m_Name: HandGrabPose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ PrefabInstance:
     - target: {fileID: 991050902453714666, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1671178974789079127, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
         type: 3}
@@ -924,7 +924,7 @@ PrefabInstance:
     - target: {fileID: 1952745715906500748, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4770060500097604018, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
         type: 3}
@@ -934,7 +934,7 @@ PrefabInstance:
     - target: {fileID: 5001282602020617551, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6600071246356082275, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
         type: 3}
@@ -949,7 +949,7 @@ PrefabInstance:
     - target: {fileID: 6651135037914743297, guid: 2b0f6414d67c2984ca01df9a6e7f4551,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -978,7 +978,7 @@ PrefabInstance:
     - target: {fileID: 680644619347966986, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2087157766194520762, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
@@ -1033,12 +1033,12 @@ PrefabInstance:
     - target: {fileID: 2785353461362827413, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6133637361864815516, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7409197720077583566, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
@@ -1048,7 +1048,7 @@ PrefabInstance:
     - target: {fileID: 7409197720077583566, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
       propertyPath: m_Layer
-      value: 31
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7468630245076469962, guid: 79a3b7cdc21eb784db5cd03c1ee684d6,
         type: 3}
@@ -1165,6 +1165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KATANA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 996ffab78f51c26438e85fc3fd0ac246,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

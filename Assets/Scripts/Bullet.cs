@@ -14,14 +14,26 @@ public class Bullet : MonoBehaviour
 
     bool _hit = false;
 
+    Vector3 _lastPos, _raydiraction;
+
     private void Update()
     {
+        _raydiraction = transform.position - _lastPos;
+
+        RaycastHit _hitCast;
+        if (Physics.Raycast(transform.position, _lastPos, out _hitCast, Vector3.Distance(transform.position, _lastPos)))
+        {
+            OnTriggerEnter(_hitCast.collider);
+        }
+
         if (_hit)
         {
             _rb.velocity = new Vector3(0, 0, 0);
             GetComponent<Collider>().enabled = false;
             GetComponentInChildren<MeshRenderer>().enabled = false;
         }
+
+        _lastPos = transform.position;
     }
 
     private void Awake()
@@ -37,20 +49,23 @@ public class Bullet : MonoBehaviour
 
         StartCoroutine(Destroy());
 
-        if (collision.gameObject.tag == "Map") { return; }
+        if (collision.gameObject.tag == "Map" || collision.tag == "Blade") { return; }
 
         Debug.Log("hitenemie");
 
-        if (collision.gameObject.layer == 29)
+        if (_hit)
         {
-            if (collision.gameObject.tag == "Head")
+            if (collision.gameObject.layer == 29)
             {
-                collision.transform.GetComponentInParent<EnemieDead>().HeadShot();
-            }
+                if (collision.gameObject.tag == "Head")
+                {
+                    collision.transform.GetComponentInParent<EnemieDead>().HeadShot();
+                }
 
-            else if (collision.gameObject.tag == "Enemie")
-            {
-                collision.transform.GetComponentInParent<EnemieDead>().Dead();
+                else if (collision.gameObject.tag == "Enemie")
+                {
+                    collision.transform.GetComponentInParent<EnemieDead>().Dead();
+                }
             }
         }
 

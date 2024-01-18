@@ -8,12 +8,17 @@ public class EnemieDead : MonoBehaviour
 
     public GameObject _headshotSound;
     public Transform _weaponLoc;
+    bool _activated;
 
     public void HeadShot()
     {
-        Instantiate(_headshotSound, transform.position, transform.rotation);
+        if (!_activated)
+        {
+            _activated = true;
+            Instantiate(_headshotSound, transform.position, transform.rotation);
 
-        Dead();
+            Dead();
+        }
     }
 
     public void Dead()

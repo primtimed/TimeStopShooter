@@ -1,15 +1,27 @@
+using NUnit.Framework.Internal;
 using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public float _hp;
-    bool _dead;
+    public bool _dead;
 
     AudioSource _audioSource;
+
+    public Cheakpoint _cheackpoint;
+
+    private void Awake()
+    {
+        if (_cheackpoint._data._index != 0)
+        {
+            transform.position = _cheackpoint._points[_cheackpoint._data._index - 1].position;
+        }
+    }
 
     private void Start()
     {
@@ -31,9 +43,7 @@ public class Player : MonoBehaviour
     {
         _audioSource.Play();
 
-        GetComponent<Movement>().enabled= false;
-        //GetComponentInChildren<Grabbable>()._holding = false;
-        //GetComponentInChildren<Grabbable>().enabled = false;
+        GetComponent<Movement>().enabled = false;
 
         yield return new WaitForSeconds(3);
 

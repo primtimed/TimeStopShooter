@@ -1,5 +1,6 @@
 using Oculus.Interaction;
 using System.Collections;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -84,6 +85,11 @@ public class Gun : MonoBehaviour
         _time += Time.unscaledDeltaTime;
 
         _holdingGun = GetComponent<Grabbable>()._holding;
+
+        if(GameObject.Find("Player").GetComponent<Player>()._dead)
+        {
+            GetComponent<Grabbable>().EndTransform();
+        }
 
         if(_holdingGun)
         {

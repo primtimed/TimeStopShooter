@@ -1,9 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using Unity.VisualScripting;
+using TMPro.Examples;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.Universal;
+using ChromaticAberration = UnityEngine.Rendering.Universal.ChromaticAberration;
 
 public class TimeStop : MonoBehaviour
 {
@@ -16,10 +18,21 @@ public class TimeStop : MonoBehaviour
     public ParticleSystem _rune;
     public GameObject _ray;
 
+    Volume _effect;
+    ChromaticAberration _ef2;
+    ColorCurves _ef1;
+
+    float _timer;
+
 
     private void Start()
     {
-        
+        _effect = GameObject.Find("Keep").GetComponent<Volume>();
+        _effect.profile.TryGet<ChromaticAberration>(out _ef2);
+        _effect.profile.TryGet<ColorCurves>(out _ef1);
+
+        _ef2.active = false;
+        _ef1.active = false;
     }
 
     private void Update()
@@ -38,6 +51,7 @@ public class TimeStop : MonoBehaviour
         else
         {
             _canPress = false;
+            StopCoroutine(TimeBeat());
             _rune.startColor = Color.red * 1;
             _material.SetColor("_EmissionColor", Color.red * 1);
             _material.mainTextureScale = new Vector2(Random.Range(1.01f, 1.2f), Random.Range(1.01f, 1.2f));
@@ -55,14 +69,36 @@ public class TimeStop : MonoBehaviour
     void TimeStopStart()
     {
         _ray.SetActive(false);
+        _ef2.active = true;
+        _ef1.active = true;
         Time.timeScale = 0;
         StartCoroutine(StopTimeStop());
     }
 
     IEnumerator StopTimeStop()
     {
+        _timer = 2.5f;
+        StartCoroutine(TimeBeat());
         yield return new WaitForSecondsRealtime(_timeStopActiveTime);
         Time.timeScale = 1;
+        _ef2.active = false;
+        _ef1.active = false;
         _time = 0;
+    }
+
+    IEnumerator TimeBeat()
+    {
+        if(Time.timeScale == 0)
+        {
+            _ef2.active = true;
+            _ef1.active = true;
+            yield return new WaitForSecondsRealtime(_timer);
+            _timer /= 1.5f;
+            _ef2.active = false;
+            _ef1.active = false;
+            yield return new WaitForSecondsRealtime(_timer);
+
+            StartCoroutine(TimeBeat());
+        }
     }
 }

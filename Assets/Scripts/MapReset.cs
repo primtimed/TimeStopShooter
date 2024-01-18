@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MapReset : MonoBehaviour
 {
+    public int _index;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Hand")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(_index);
         }
     }
 }

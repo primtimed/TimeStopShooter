@@ -189,7 +189,7 @@ namespace Oculus.Interaction
             _activeTransformer.UpdateTransform();
         }
 
-        private void EndTransform()
+        public void EndTransform()
         {
             if (_activeTransformer == null)
             {

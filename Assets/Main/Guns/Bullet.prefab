@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95e47532a1925048b5ad9127483e030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 2000
+  _bulletSpeed: 2500
   _explotionForge: 25000
   _explotionRadius: 25000
 --- !u!54 &6744814726709147682
@@ -98,9 +98,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.01
-  m_Height: 0.06
+  m_Height: 0.15
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -0.05}
 --- !u!96 &1880025137065087047
 TrailRenderer:
   serializedVersion: 3
