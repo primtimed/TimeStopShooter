@@ -18,7 +18,7 @@ public class TimeStop : MonoBehaviour
     public ParticleSystem _rune;
     public GameObject _ray;
 
-    Volume _effect;
+    public Volume _effect;
     ChromaticAberration _ef2;
     ColorCurves _ef1;
 
@@ -27,7 +27,6 @@ public class TimeStop : MonoBehaviour
 
     private void Start()
     {
-        _effect = GameObject.Find("Keep").GetComponent<Volume>();
         _effect.profile.TryGet<ChromaticAberration>(out _ef2);
         _effect.profile.TryGet<ColorCurves>(out _ef1);
 

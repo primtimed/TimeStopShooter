@@ -20,7 +20,8 @@ public class EnemieAI : MonoBehaviour
     public float _rotationSpeed;
 
     float _timer;
-    float _trackdist = 8;
+    public float _dist;
+    float _trackdist;
 
     Animator _animator;
 
@@ -49,7 +50,7 @@ public class EnemieAI : MonoBehaviour
         if (distance <= _trackdist)
         {
             _aiActive = true;
-            _trackdist = 15;
+            _trackdist = _dist * 2;
 
             _agent.updateRotation = false;
 
@@ -61,7 +62,7 @@ public class EnemieAI : MonoBehaviour
             _agent.enabled = true;
 
             _aiActive = false;
-            _trackdist = 8;
+            _trackdist = _dist;
 
             _agent.updateRotation = true;
 
@@ -94,7 +95,7 @@ public class EnemieAI : MonoBehaviour
         RaycastHit _hit;
         float _random = Random.Range(0.4f, 1.5f);
 
-        if (Physics.SphereCast(_gun.transform.position, .1f, _gun.transform.forward, out _hit, 15))
+        if (Physics.SphereCast(_gun.transform.position, .1f, _gun.transform.forward, out _hit, 100))
         {
             //if (_hit.transform.tag == "Player" && _timer > _random)
             //{
@@ -104,7 +105,7 @@ public class EnemieAI : MonoBehaviour
             //}
         }
 
-        if (Physics.Raycast(_gun.transform.position, _gun.transform.forward, out _hit, 15))
+        if (Physics.Raycast(_gun.transform.position, _gun.transform.forward, out _hit, 100))
         {
             if (_hit.transform.tag == "Player" && _timer > _random)
             {

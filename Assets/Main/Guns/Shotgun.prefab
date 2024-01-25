@@ -218,9 +218,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2414892068067070976}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Mass: 0.001
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -909,7 +909,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.047124192, y: 0.570569, z: 0.11261226}
+  m_Size: {x: 0.047124192, y: 0.8, z: 0.2}
   m_Center: {x: -0.000000008381903, y: 0.24456067, z: 0.0016383969}
 --- !u!4 &6823179596340371697 stripped
 Transform:

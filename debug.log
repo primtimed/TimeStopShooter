@@ -63,3 +63,7 @@
 [0115/190508.442:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0115/190508.444:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0117/102941.633:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0119/145030.909:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+[0119/145229.194:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0124/135748.961:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0125/125128.820:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

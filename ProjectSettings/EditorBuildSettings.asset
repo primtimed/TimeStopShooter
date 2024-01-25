@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scene/HandGrabUseExamples.unity
     guid: 40ef506df6b48be45bb4de0eef67454f
+  - enabled: 1
+    path: Assets/Rayen/Scenes/MainMap.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0a7853418d2a343488657b6416941600,
       type: 2}

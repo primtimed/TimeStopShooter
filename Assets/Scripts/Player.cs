@@ -13,16 +13,6 @@ public class Player : MonoBehaviour
 
     AudioSource _audioSource;
 
-    public Cheakpoint _cheackpoint;
-
-    private void Awake()
-    {
-        if (_cheackpoint._data._index != 0)
-        {
-            transform.position = _cheackpoint._points[_cheackpoint._data._index - 1].position;
-        }
-    }
-
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
