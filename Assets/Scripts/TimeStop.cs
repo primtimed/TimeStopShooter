@@ -9,6 +9,8 @@ using ChromaticAberration = UnityEngine.Rendering.Universal.ChromaticAberration;
 
 public class TimeStop : MonoBehaviour
 {
+    public static event System.Action<TimeStop> OnStarted, OnEnded;
+
     public bool _canPress;
 
     public float _timeStopActiveTime, _coolDown;
@@ -71,6 +73,7 @@ public class TimeStop : MonoBehaviour
         _ef2.active = true;
         _ef1.active = true;
         Time.timeScale = 0;
+        OnStarted?.Invoke(this);
         StartCoroutine(StopTimeStop());
     }
 
@@ -83,6 +86,7 @@ public class TimeStop : MonoBehaviour
         _ef2.active = false;
         _ef1.active = false;
         _time = 0;
+        OnEnded?.Invoke(this);
     }
 
     IEnumerator TimeBeat()

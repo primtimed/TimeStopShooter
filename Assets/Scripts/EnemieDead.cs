@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemieDead : MonoBehaviour
 {
+    public static event System.Action<EnemieDead, bool> OnKilled;
+
     public GameObject _deadEnemie, _newWeapon;
 
     public GameObject _headshotSound;
@@ -23,6 +25,8 @@ public class EnemieDead : MonoBehaviour
 
     public void Dead()
     {
+        OnKilled?.Invoke(this, _activated);
+
         //falling enemie
         Instantiate(_newWeapon, _weaponLoc.position, _weaponLoc.rotation);
         Instantiate(_deadEnemie, transform.position, transform.rotation);

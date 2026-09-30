@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
+    public static event System.Action<Gun> OnFired;
+
     public bool _auto;
 
     public int _ammo;
@@ -278,6 +280,8 @@ public class Gun : MonoBehaviour
 
     IEnumerator Flash()
     {
+        OnFired?.Invoke(this);
+
         _flash.SetActive(true);
         Instantiate(_sound, _loc.position, _loc.rotation, null);
         yield return new WaitForSecondsRealtime(0.1f);
